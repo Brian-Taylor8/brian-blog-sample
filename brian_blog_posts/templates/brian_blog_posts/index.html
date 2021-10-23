@@ -1,0 +1,21 @@
+{% extends "brian_blog_posts/base.html" %}
+
+{% block page_header %}
+  <div class="jumbotron">
+    <h1 class="display-3">Read engaging blog posts.</h1>
+
+    <p class="lead">Read the blog posts of others and post your own. Our aim
+      is to share interesting information that we find valuable and that we
+      believe others will also find valuable. The goal is to summarize important
+      ideas, lessons, or concepts, so that others can learn without having to 
+      expend the same effort that you did whilst inititally learning the thing.</p>
+    <a class="btn btn-lg btn-primary" href="{% url 'brian_blog_posts:blog_posts' %}"
+      role="button">Read blog posts &raquo;</a>
+
+    <p></p>
+    
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+      role="button">Register to make your own posts &raquo;</a>
+
+  </div>
+{% endblock page_header %}

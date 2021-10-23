@@ -1,0 +1,23 @@
+{% extends "brian_blog_posts/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+  <h2>{{ blog_post.post_title }}</h2>
+  <h6>{{ blog_post.date_added}}</h6>
+{% endblock page_header %}
+
+
+{% block content %}
+
+  <p><h4>{{ blog_post.text|linebreaks }}</h4></p>
+
+  <p><h3>
+    <a href="{% url 'brian_blog_posts:edit_blog_post' blog_post.id %}">Edit post</a>
+  </h3></p>
+
+  <h1>
+  	<a href="{% url 'brian_blog_posts:blog_posts' %}">Go back to the main posts page &raquo;</a>
+  </h1>
+
+{% endblock content %}
+

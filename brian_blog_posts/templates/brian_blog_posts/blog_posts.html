@@ -1,0 +1,25 @@
+{% extends "brian_blog_posts/base.html" %}
+{% load bootstrap4 %}
+
+{% block page_header %}
+  <h2>POSTS!</h2>
+{% endblock page_header %}
+
+
+{% block content %}
+
+  <a href="{% url 'brian_blog_posts:new_blog_post' %}">Make a new post</a>
+
+    {% for blog_post in blog_posts %}
+      <div class="card mb-3">
+        <h4 class="card-header">
+          <a href="{% url 'brian_blog_posts:blog_post' blog_post.id %}">
+          {{ blog_post.post_title }}</a>
+        </h4>
+      </div>
+    {% empty %}
+      <p>There are no entries for this topic yet.</p>
+    {% endfor %}
+
+
+{% endblock content %}
